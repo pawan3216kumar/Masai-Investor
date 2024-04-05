@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+
+    body{
+        background-color: black;
+    }
+  #box{
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: rgb(14, 12, 12);
+    background-color: white;
+    margin-top: 90px;
+    width: 80%;
+   margin-left: 10%;
+  }
+
+    #heading{
+        text-align: center;
+        font-size: 30px;
+        font-weight: 900;
+    }
+    #container{
+        width: 90%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        gap: 40px;
+        
+    }
+
+    div{
+        text-align: center;
+        font-size: 30px;
+        font-weight: 800; 
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        box-sizing: border-box;
+
+    }
+
+    div>img{
+          height: 300px;
+          width: 250px;
+          box-sizing: border-box;
+    }
+
+    #comp{
+        height: 100px;
+        width: 200px;
+    }
+</style>
+<body>
+    <div id="box">
+        <h2 id="heading">Strategic investor</h2>
+        <div id="container"> </div>  
+    </div>
+     
+</body>
+</html>
+<script>
+    
+    let inverstor = 
+    [{ 
+           FouImg : "https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg",
+           title : "Vijay Shakher Sharma",
+           position : "Founder & CEO",
+           companyImg : "https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg"
+        },
+        { 
+           FouImg : "https://masai-website-images.s3.ap-south-1.amazonaws.com/Rectangle_427_637d69bb57.png",
+           title : "Vijay Shakher Sharma",
+           position : "Founder ",
+           companyImg : "https://masai-website-images.s3.ap-south-1.amazonaws.com/cred_0a47d7b4f8.png"
+        },{ 
+           FouImg : "https://masai-website-images.s3.ap-south-1.amazonaws.com/amrish_rau_pine_labs_144e5e587c.jpg",
+           title : "Vijay Shakher Sharma",
+           position : "Founder",
+           companyImg : "https://masai-website-images.s3.ap-south-1.amazonaws.com/pine_labs_0aa2407434.png"
+        },{ 
+           FouImg : "https://masai-website-images.s3.ap-south-1.amazonaws.com/Sampad_swain_Instamojo_f12bf6341e.jpg",
+           title : "Vijay Shakher Sharma",
+           position : "Co-Founder & CEO",
+           companyImg : "https://masai-website-images.s3.ap-south-1.amazonaws.com/instamojo_8763e704f7.png"
+        }
+    ]
+
+let container = document.getElementById("container");
+
+inverstor.forEach(function(ele , i){
+    let div = document.createElement("div");
+    let founder = document.createElement("img")
+    founder.src = ele.FouImg
+      
+    let title = document.createElement("p")
+    title.innerText = ele.title
+
+    let position = document.createElement("p")
+    position.innerText = ele.position
+
+    let compImg = document.createElement("img")
+    compImg.src = ele.companyImg
+    compImg.id = "comp"
+    
+
+    div.append(founder , title ,  position , compImg )
+
+    container.append(div)
+})
+
+
+
+    
+</script>
